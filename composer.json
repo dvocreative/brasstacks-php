@@ -1,0 +1,23 @@
+{
+  "name": "brasstacks/brasstacks",
+  "type": "library",
+  "description": "DIY PHP application framework",
+  "keywords": ["php","framework","micro","rest"],
+  "homepage": "https://github.com/dvocreative/brasstacks-php",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Dan O'Donnell",
+      "email": "dan@dvoc.ca",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "BrassTacks": "src"
+    }
+  }
+}
