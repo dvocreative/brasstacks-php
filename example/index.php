@@ -2,6 +2,8 @@
 
 require 'vendor/autoload.php';
 
+//pre-massage any of your components
+
 $_request = new TestApp\DTOs\Request($_GET, $_POST, $_COOKIE, $_SERVER, $_FILES, (!empty($_SESSION)) ? $_SESSION : null);
 
 $router = new TestApp\Components\Router([
@@ -9,6 +11,8 @@ $router = new TestApp\Components\Router([
         $resp->append('hello!');
     }]
 ]);
+
+//put together the config
 
 $configuration = [
     'components' => [
@@ -20,8 +24,16 @@ $configuration = [
     ]
 ];
 
+//pass it in
+
 $app = new BrassTacks\App($configuration);
+
+//run it
 
 $app->run($_request);
 
+//dump it (with whatever headers you want)
+
+header('Content-Type: application/json');
 echo $app->dump();
+

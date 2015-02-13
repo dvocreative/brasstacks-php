@@ -13,6 +13,8 @@ class Formatter implements BTFormatter {
 
     public function format($response) {
 
+        //Format away to make your response any way you like it
+
         return json_encode([
             'success' => $response->success,
             'data' => $response->data

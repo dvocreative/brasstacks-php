@@ -26,6 +26,10 @@ class Router implements BTRouter {
 
     public function route($request = array()) {
 
+        //In this example we're using the Klein router. Note that we could have just
+        //used the native Klein request object from the beginning (it also does sanitization), but this shows how versatile
+        //and abstract you can be.
+
         $kleinReq = new KleinRequest(
             $request->raw->get,
             $request->raw->post,
