@@ -16,7 +16,7 @@ class App {
 
     }
 
-    public function run($request = array()) {
+    public function run($request) {
 
         $this->request = $request;
 

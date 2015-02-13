@@ -2,7 +2,13 @@
 
 require 'vendor/autoload.php';
 
-$router = new TestApp\Components\Router();
+$_request = new TestApp\DTOs\Request($_GET, $_POST, $_COOKIE, $_SERVER, $_FILES, (!empty($_SESSION)) ? $_SESSION : null);
+
+$router = new TestApp\Components\Router([
+    [ 'GET', '/', function($req, $resp) {
+        $resp->append('hello!');
+    }]
+]);
 
 $configuration = [
     'components' => [
@@ -16,6 +22,6 @@ $configuration = [
 
 $app = new BrassTacks\App($configuration);
 
-$app->run($_REQUEST);
+$app->run($_request);
 
 echo $app->dump();

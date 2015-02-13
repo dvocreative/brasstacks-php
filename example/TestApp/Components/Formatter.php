@@ -11,9 +11,12 @@ class Formatter implements BTFormatter {
 
     }
 
-    public function format($response = array()) {
+    public function format($response) {
 
-        return $response;
+        return json_encode([
+            'success' => $response->success,
+            'data' => $response->data
+        ]);
 
     }
 

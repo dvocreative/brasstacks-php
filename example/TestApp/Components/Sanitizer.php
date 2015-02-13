@@ -1,8 +1,8 @@
 <?php
 
 namespace TestApp\Components;
-use BrassTacks\ComponentInterface\Sanitizer as BTSanitizer;
 
+use BrassTacks\ComponentInterface\Sanitizer as BTSanitizer;
 
 class Sanitizer implements BTSanitizer {
 
@@ -12,7 +12,11 @@ class Sanitizer implements BTSanitizer {
 
     }
 
-    public function sanitize($request = array()) {
+    public function sanitize($request) {
+
+        $request->parameters = array_map(function($val){
+            return $val;
+        }, $request->parameters);
 
         return $request;
 
