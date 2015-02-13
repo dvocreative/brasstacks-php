@@ -1,5 +1,5 @@
 {
-  "name": "brasstacks/brasstacks",
+  "name": "dvoc/brasstacks-php",
   "type": "library",
   "description": "DIY PHP application framework",
   "keywords": ["php","framework","micro","rest"],
